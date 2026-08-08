@@ -1,0 +1,96 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<style>
+  .form-title {
+    color: #00274d;
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+  .form-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .form-card p {
+    margin-bottom: 18px;
+  }
+  .form-card label {
+    display: block;
+    font-weight: bold;
+    color: #00274d;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+  }
+  .form-card input[type="text"],
+  .form-card input[type="number"],
+  .form-card input[type="file"],
+  .form-card textarea,
+  .form-card select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+  }
+  .form-card input:focus,
+  .form-card textarea:focus,
+  .form-card select:focus {
+    outline: none;
+    border-color: #00274d;
+    box-shadow: 0 0 0 2px rgba(0,39,77,0.15);
+  }
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .btn-save {
+    background-color: #f1c40f;
+    color: #00274d;
+    border: 2px solid #f1c40f;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-save:hover {
+    background-color: #00274d;
+    color: #f1c40f;
+    border-color: #00274d;
+  }
+  .btn-cancel {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: 2px solid #6c757d;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-cancel:hover {
+    background-color: #ffffff;
+    color: #6c757d;
+  }
+</style>
+
+<h1 class="form-title">Attraction</h1>
+
+<div class="form-card">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit" class="btn-save">Save</button>
+      <a href="{% url 'geography:attraction_list' %}" class="btn-cancel">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

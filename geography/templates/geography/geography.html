@@ -1,0 +1,77 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<style>
+  .geo-header {
+    color: #00274d;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .styled-table thead tr {
+    background-color: #00274d;
+    color: #f1c40f;
+    text-align: left;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f4f7fb;
+  }
+  .styled-table tbody tr:hover {
+    background-color: #e8f0fb;
+  }
+  .styled-table td a {
+    color: #00274d;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .styled-table td a:hover {
+    text-decoration: underline;
+  }
+  .attraction-list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 18px;
+  }
+  .attraction-list li {
+    margin-bottom: 4px;
+  }
+</style>
+
+<h1 class="geo-header">Romania</h1>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Type</th>
+      <th>Attractions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for area in areas %}
+    <tr>
+      <td><a href="{% url 'geography:area_detail' area.pk %}">{{ area.name }}</a></td>
+      <td>{{ area.area_type }}</td>
+      <td>
+        <ul class="attraction-list">
+          {% for attraction in attractions %}
+            {% if attraction.area == area %}
+              <li><a href="{% url 'geography:attraction_detail' attraction.pk %}">{{ attraction.name }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,216 @@
+[
+{
+  "model": "geography.area",
+  "pk": 1,
+  "fields": {
+    "name": "Bucharest",
+    "area_type": "City"
+  }
+},
+{
+  "model": "geography.area",
+  "pk": 2,
+  "fields": {
+    "name": "Transylvania",
+    "area_type": "Region"
+  }
+},
+{
+  "model": "geography.area",
+  "pk": 3,
+  "fields": {
+    "name": "Constanta",
+    "area_type": "City"
+  }
+},
+{
+  "model": "geography.area",
+  "pk": 4,
+  "fields": {
+    "name": "Cluj-Napoca",
+    "area_type": "City"
+  }
+},
+{
+  "model": "geography.area",
+  "pk": 5,
+  "fields": {
+    "name": "Maramures",
+    "area_type": "Region"
+  }
+},
+{
+  "model": "geography.area",
+  "pk": 6,
+  "fields": {
+    "name": "Brasov",
+    "area_type": "City"
+  }
+},
+{
+  "model": "geography.area",
+  "pk": 7,
+  "fields": {
+    "name": "Viscri",
+    "area_type": "Village"
+  }
+},
+{
+  "model": "geography.area",
+  "pk": 8,
+  "fields": {
+    "name": "Lasi",
+    "area_type": "City"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 2,
+  "fields": {
+    "name": "Bran Castle",
+    "area": 2,
+    "description": "Perched on a rocky hilltop in the Carpathian Mountains, Bran Castle is Romania's most visited landmark and is commonly associated with the legend of Dracula. Built in the 14th century, it served as a royal residence for Queen Marie of Romania.",
+    "image": "attractions/bran_castle.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 3,
+  "fields": {
+    "name": "Black Sea Beach",
+    "area": 3,
+    "description": "Located on the western shore of the Black Sea, Constanta is Romania's oldest continuously inhabited city and its largest port. The beach resort area attracts millions of visitors each summer with its warm waters, sandy shores and vibrant nightlife along the Romanian Riviera.",
+    "image": "attractions/constanta_black_sea_beach-2.png"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 4,
+  "fields": {
+    "name": "National Museum of Art Bucharest",
+    "area": 1,
+    "description": "Houses an extensive collection of Romanian and European art, located in the former Royal Palace on Calea Victoriei.",
+    "image": "attractions/national_mueseum_of_art_two.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 5,
+  "fields": {
+    "name": "Peles Castle",
+    "area": 1,
+    "description": "A stunning Neo-Renaissance castle in the Carpathian Mountains, built as a summer residence for King Carol I in the 19th century.",
+    "image": "attractions/peles_castle.jpeg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 6,
+  "fields": {
+    "name": "Sighisoara Citadel",
+    "area": 2,
+    "description": "A medieval fortified city and UNESCO World Heritage Site, birthplace of Vlad the Impaler, featuring colourful buildings and a clock tower.",
+    "image": "attractions/sighadora_citadel.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 7,
+  "fields": {
+    "name": "Danube Delta",
+    "area": 3,
+    "description": "One of Europe's largest and best-preserved deltas, a UNESCO biosphere reserve home to thousands of bird species and diverse wildlife.",
+    "image": "attractions/danube_delta_one.png"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 8,
+  "fields": {
+    "name": "Central Park",
+    "area": 4,
+    "description": "A large urban park in the heart of Cluj-Napoca featuring a lake, casino building and recreational areas popular with locals and tourists.",
+    "image": "attractions/central_park_three.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 9,
+  "fields": {
+    "name": "St. Michael's Church",
+    "area": 4,
+    "description": "A Gothic Roman Catholic church dating from the 14th century, one of the most important Gothic monuments in Transylvania.",
+    "image": "attractions/st_michales_church_onejpg.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 10,
+  "fields": {
+    "name": "Merry Cemetery",
+    "area": 5,
+    "description": "A unique cemetery in Sapanta featuring colourful wooden crosses with naive paintings and humorous epitaphs describing the deceased's life.",
+    "image": "attractions/merry_cemtery_number_one.png"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 11,
+  "fields": {
+    "name": "Wooden Churches",
+    "area": 5,
+    "description": "A unique cemetery in Sapanta featuring colourful wooden crosses with naive paintings and humorous epitaphs describing the deceased's life.",
+    "image": "attractions/wooden_church.jpeg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 12,
+  "fields": {
+    "name": "Black Church",
+    "area": 6,
+    "description": "The largest Gothic church in Romania, named after fire damage from 1689, containing a famous collection of Anatolian carpet",
+    "image": "attractions/black_church_.jpeg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 13,
+  "fields": {
+    "name": "Tampa Mountain",
+    "area": 6,
+    "description": "A mountain overlooking Brasov city with a cable car and hiking trails, offering panoramic views of the historic old town below.",
+    "image": "attractions/Tampa_mountain_Brasov.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 14,
+  "fields": {
+    "name": "Viscri White Church",
+    "area": 7,
+    "description": "A 12th century fortified Saxon church and UNESCO World Heritage Site, one of Romania's best preserved medieval structures surrounded by traditional village life.",
+    "image": "attractions/Viscari_White_Chruch.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 19,
+  "fields": {
+    "name": "Place Of Culture",
+    "area": 8,
+    "description": "A stunning neo-Gothic palace in the heart of lasi, completed in 1925. It houses four museums and is one of Romania’s most iconic landmarks.",
+    "image": "attractions/Place_Of_Culture_3.jpg"
+  }
+},
+{
+  "model": "geography.attraction",
+  "pk": 20,
+  "fields": {
+    "name": "Place Of Parliament",
+    "area": 1,
+    "description": "The Palace of the Parliament is the world's second largest administrative building, built under Nicolae Ceaușescu in the 1980s. It contains over 1,000 rooms and is a symbol of Romania's communist era.",
+    "image": "attractions/place_of_parliamnet_number_two_EwgVaom.jpg"
+  }
+}
+]

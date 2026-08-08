@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Romania</title>
+<link rel="icon" href="{% static 'pages/favicon.ico' %}">
+<link rel="shortcut icon" href="{% static 'pages/favicon.ico' %}">
+<link rel="apple-touch-icon" href="{% static 'pages/favicon-180.png' %}">
+</head>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; }
+header { padding: 0; border-bottom: 1px solid #ddd; }
+.layout {
+display: flex;
+min-height: calc(100vh - 180px);
+    }
+.sidebar {
+width: 250px;
+background-color: #00274d; 
+padding: 20px;
+box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+color: #ffffff;
+    }
+.sidebar ul {
+list-style: none;
+padding: 0;
+margin: 0;
+    }
+.sidebar li {
+margin-bottom: 15px;
+    }
+.sidebar a {
+display: block;
+padding: 12px 20px;
+background-color: #f1c40f; 
+border-radius: 8px;
+color: #00274d; 
+font-weight: 500;
+transition: all 0.3s ease;
+text-align: center;
+    }
+.sidebar a:hover {
+background-color: #c0392b; 
+color: #ffffff;
+transform: scale(1.05);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+.sidebar a:active {
+background-color: #e74c3c;
+color: #ffffff;
+    }
+main { padding: 24px; }
+.content {
+background-color: #ffffff; 
+color: #000000;
+padding: 25px 35px;
+border-radius: 12px;
+border: 1px solid #e5e5e5;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+display: inline-block;
+width: auto;
+max-width: 700px;
+margin: 30px auto 0 auto;
+}
+.content h1, .content p {
+color: #000000;
+}
+.site-footer {
+background-color: #00274d; 
+border-top: 3px solid #f1c40f; 
+padding: 20px 30px;
+color: #ffffff;
+text-align: center;
+  }
+.footer-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+  }
+.footer-left {
+display: flex;
+align-items: center;
+  }
+.footer-logo {
+height: 50px;
+width: auto;
+margin-right: 15px;
+  }
+.footer-right {
+font-size: 14px;
+color: #f1c40f; 
+  }
+.footer-right p {
+margin: 5px 0;
+  }
+.banner{
+display: block;
+width: 100%;
+height: 220px;
+object-fit: cover;
+border-bottom: 1px solid #ddd;
+margin-bottom: 0;
+    }
+.header-inner {
+padding: 18px 24px;
+background: linear-gradient(to right, #00274d, #f1c40f, #c0392b); 
+color: #000000; 
+text-align: left; 
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+.header-inner h1 {
+margin: 0;
+font-size: 2.5rem;
+font-weight: bold;
+color: #000000;
+  }
+.header-inner p {
+margin: 6px 0 0;
+font-size: 1rem;
+color: #000000; 
+  }
+</style>
+</head>
+<body>
+<header>
+<img src="{% static 'pages/romanian_flag.png' %}" alt="Romania flag banner" class="banner">
+<div class="header-inner">
+<h1 style="margin: 0;">Romania</h1>
+</div>
+</header>
+<div class="layout">
+<nav class="sidebar">
+<ul>
+  <li><a href="{% url 'home' %}">Home</a></li>
+  {% for p in pages %}
+  <li><a href="{% url 'page_detail' slug=p.slug %}">{{ p.title }}</a></li>
+  {% endfor %}
+  <li><a href="{% url 'geography:geography' %}">Geography</a></li>
+  <li><a href="{% url 'geography:area_list' %}">Areas</a></li>
+  <li><a href="{% url 'geography:attraction_list' %}">Attractions</a></li>
+</ul>
+</nav>
+<main class="content">
+      {% block content %}{% endblock %}
+</main>
+</div>
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-left">
+<img src="{% static 'pages/logo.png' %}" alt="Site Logo" class="footer-logo">
+</div>
+<div class="footer-right">
+<p><strong>Emir Demirkol — 31660</strong></p>
+<p><strong>Country: Romania</strong></p>
+</div>
+</div>
+</footer>
+</body>
+</html>
+
+

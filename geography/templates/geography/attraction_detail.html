@@ -1,0 +1,118 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<style>
+  .detail-title {
+    color: #00274d;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+  .styled-table thead tr {
+    background-color: #00274d;
+    color: #f1c40f;
+    text-align: left;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+  }
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f4f7fb;
+  }
+  .detail-description {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .detail-image {
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+  }
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .btn-edit {
+    background-color: #00274d;
+    color: #f1c40f;
+    border-color: #00274d;
+  }
+  .btn-edit:hover {
+    background-color: #f1c40f;
+    color: #00274d;
+  }
+  .btn-delete {
+    background-color: #c0392b;
+    color: #ffffff;
+    border-color: #c0392b;
+  }
+  .btn-delete:hover {
+    background-color: #ffffff;
+    color: #c0392b;
+  }
+  .btn-back {
+    background-color: #6c757d;
+    color: #ffffff;
+    border-color: #6c757d;
+  }
+  .btn-back:hover {
+    background-color: #ffffff;
+    color: #6c757d;
+  }
+</style>
+
+<h1 class="detail-title">{{ object.name }}</h1>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+      <td><strong>Area</strong></td>
+      <td>{{ object.area }}</td>
+    </tr>
+  </tbody>
+</table>
+
+{% if object.description %}
+  <p class="detail-description">{{ object.description }}</p>
+{% endif %}
+
+{% if object.image %}
+  <img src="{{ object.image.url }}" alt="{{ object.name }}" class="detail-image">
+{% endif %}
+
+<div class="action-buttons">
+  <a href="{% url 'geography:attraction_update' object.pk %}" class="btn btn-edit">Edit</a>
+  <a href="{% url 'geography:attraction_delete' object.pk %}" class="btn btn-delete">Delete</a>
+  <a href="{% url 'geography:attraction_list' %}" class="btn btn-back">Back to Attractions</a>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<style>
+  .delete-title {
+    color: #00274d;
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+  .form-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .delete-warning {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .delete-warning strong {
+    color: #c0392b;
+  }
+  .form-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .btn-confirm-delete {
+    background-color: #c0392b;
+    color: #ffffff;
+    border: 2px solid #c0392b;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-confirm-delete:hover {
+    background-color: #ffffff;
+    color: #c0392b;
+  }
+  .btn-cancel {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: 2px solid #6c757d;
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-cancel:hover {
+    background-color: #ffffff;
+    color: #6c757d;
+  }
+</style>
+
+<h1 class="delete-title">Delete Attraction</h1>
+
+<div class="form-card">
+  <p class="delete-warning">Are you sure you want to delete <strong>{{ object.name }}</strong>? This action cannot be undone.</p>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-actions">
+      <button type="submit" class="btn-confirm-delete">Confirm Delete</button>
+      <a href="{% url 'geography:attraction_list' %}" class="btn-cancel">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<style>
+  .list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .list-header h1 {
+    margin: 0;
+    color: #00274d;
+    font-size: 1.8rem;
+  }
+  .btn-add {
+    background-color: #f1c40f;
+    color: #00274d;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .btn-add:hover {
+    background-color: #c0392b;
+    color: #ffffff;
+  }
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .styled-table thead tr {
+    background-color: #00274d;
+    color: #f1c40f;
+    text-align: left;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+  }
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f4f7fb;
+  }
+  .styled-table tbody tr:hover {
+    background-color: #e8f0fb;
+  }
+  .styled-table td a {
+    color: #00274d;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .styled-table td a:hover {
+    text-decoration: underline;
+  }
+  .action-link {
+    color: #00274d;
+    text-decoration: none;
+    font-size: 0.88rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #00274d;
+    margin-right: 4px;
+    transition: all 0.2s ease;
+  }
+  .action-link:hover {
+    background-color: #00274d;
+    color: #f1c40f;
+  }
+  .action-link.view {
+    border-color: #148a7a;
+    color: #148a7a;
+  }
+  .action-link.view:hover {
+    background-color: #148a7a;
+    color: #ffffff;
+  }
+  .action-link.update {
+    border-color: #1a5fa8;
+    color: #1a5fa8;
+  }
+  .action-link.update:hover {
+    background-color: #1a5fa8;
+    color: #ffffff;
+  }
+  .action-link.delete {
+    border-color: #c0392b;
+    color: #c0392b;
+  }
+  .action-link.delete:hover {
+    background-color: #c0392b;
+    color: #ffffff;
+  }
+</style>
+
+<div class="list-header">
+  <h1>Attractions</h1>
+  <a href="{% url 'geography:attraction_create' %}" class="btn-add">+ Add Attraction</a>
+</div>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Area</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for attraction in attractions %}
+    <tr>
+      <td><a href="{% url 'geography:attraction_detail' attraction.pk %}">{{ attraction.name }}</a></td>
+      <td>{{ attraction.area }}</td>
+      <td>
+        <a href="{% url 'geography:attraction_detail' attraction.pk %}" class="action-link view">View</a>
+        <a href="{% url 'geography:attraction_update' attraction.pk %}" class="action-link update">Update</a>
+        <a href="{% url 'geography:attraction_delete' attraction.pk %}" class="action-link delete">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

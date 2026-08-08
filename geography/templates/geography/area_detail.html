@@ -1,0 +1,145 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<style>
+  .detail-title {
+    color: #00274d;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+  .styled-table thead tr {
+    background-color: #00274d;
+    color: #f1c40f;
+    text-align: left;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f4f7fb;
+  }
+  .styled-table tbody tr:hover {
+    background-color: #e8f0fb;
+  }
+  .styled-table td a {
+    color: #00274d;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .styled-table td a:hover {
+    text-decoration: underline;
+  }
+  .section-heading {
+    color: #00274d;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .btn-edit {
+    background-color: #00274d;
+    color: #f1c40f;
+    border-color: #00274d;
+  }
+  .btn-edit:hover {
+    background-color: #f1c40f;
+    color: #00274d;
+  }
+  .btn-delete {
+    background-color: #c0392b;
+    color: #ffffff;
+    border-color: #c0392b;
+  }
+  .btn-delete:hover {
+    background-color: #ffffff;
+    color: #c0392b;
+  }
+  .btn-back {
+    background-color: #6c757d;
+    color: #ffffff;
+    border-color: #6c757d;
+  }
+  .btn-back:hover {
+    background-color: #ffffff;
+    color: #6c757d;
+  }
+  .btn-view {
+    color: #00274d;
+    text-decoration: none;
+    font-size: 0.88rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #00274d;
+    transition: all 0.2s ease;
+  }
+  .btn-view:hover {
+    background-color: #00274d;
+    color: #f1c40f;
+  }
+</style>
+
+<h1 class="detail-title">{{ object.name }}</h1>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Area Name</strong></td>
+      <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+      <td><strong>Area Type</strong></td>
+      <td>{{ object.area_type }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="section-heading">Attractions</h2>
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for attraction in object.attraction_set.all %}
+    <tr>
+      <td>{{ attraction.name }}</td>
+      <td><a href="{% url 'geography:attraction_detail' attraction.pk %}" class="btn-view">View</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div class="action-buttons">
+  <a href="{% url 'geography:area_update' object.pk %}" class="btn btn-edit">Edit</a>
+  <a href="{% url 'geography:area_delete' object.pk %}" class="btn btn-delete">Delete</a>
+  <a href="{% url 'geography:area_list' %}" class="btn btn-back">Back to Areas</a>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Django
+db.sqlite3
+*.log
+venv
+
+# Meddia uploads
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store

@@ -1,0 +1,42 @@
+[
+{
+  "model": "pages.page",
+  "pk": 1,
+  "fields": {
+    "slug": "history",
+    "title": "History",
+    "content": "Romania’s history begins with the ancient Dacians, who inhabited the region before it was conquered by the Roman Empire in the 2nd century AD. Roman rule strongly influenced the culture and language of the area, forming the foundations of modern Romanian society.\r\n\r\nDuring the Middle Ages, Romanian territories developed as principalities and later experienced Ottoman influence. In the 19th century, Romania achieved independence and later became a unified kingdom. Following periods of monarchy and communist rule in the 20th century, Romania transitioned to a democratic republic in 1989.\r\n\r\nThis information is supported by established historical sources. \r\n <a href=\"/references/#ref1\">[1]</a>",
+    "updated_at": "2026-02-13T15:55:32.804Z"
+  }
+},
+{
+  "model": "pages.page",
+  "pk": 2,
+  "fields": {
+    "slug": "languages",
+    "title": "Language(s)",
+    "content": "Romania’s official language is Romanian, a Romance language derived from Latin. \r\nIt is spoken by the majority of the population and is closely related to Italian, French, and Spanish. \r\nSeveral minority languages are also spoken, including Hungarian, Romani, and German. \r\nThis information is supported by established linguistic sources \r\n\r\n\r\n<a href=\"/references/#ref2\">[2]</a>",
+    "updated_at": "2026-02-13T15:55:27.571Z"
+  }
+},
+{
+  "model": "pages.page",
+  "pk": 3,
+  "fields": {
+    "slug": "references",
+    "title": "References",
+    "content": "<ol>\r\n  <li id=\"ref1\">Encyclopaedia Britannica, \"History of Romania,\" Encyclopaedia Britannica, 2024.</li>\r\n  <li id=\"ref2\">Encyclopaedia Britannica, \"Romanian language,\" Encyclopaedia Britannica, 2024.</li>\r\n  <li id=\"ref3\">Encyclopaedia Britannica, \"Bran Castle,\" Encyclopaedia Britannica, 2024.</li>\r\n  <li id=\"ref4\">Encyclopaedia Britannica, \"Bucharest,\" Encyclopaedia Britannica, 2024.</li>\r\n  <li id=\"ref5\">Wikimedia Commons, \"Romania Travel Images,\" Wikimedia Foundation, 2024.</li>\r\n</ol>",
+    "updated_at": "2026-03-31T11:11:10.611Z"
+  }
+},
+{
+  "model": "pages.page",
+  "pk": 4,
+  "fields": {
+    "slug": "flag",
+    "title": "Flag",
+    "content": "Romania’s flag is a vertical tricolour of blue, yellow, and red. The design is similar to the flags of neighbouring Moldova and the historic region of Wallachia, reflecting shared regional influences. The current tricolour became a national symbol in the 19th century and is used today as the state flag of Romania. During the 1989 Romanian Revolution, protesters cut the communist coat of arms out of the centre of the national flag, creating a powerful “flag with a hole” that became a symbol of freedom.",
+    "updated_at": "2026-02-13T15:55:52.440Z"
+  }
+}
+]
