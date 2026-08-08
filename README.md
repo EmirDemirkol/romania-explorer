@@ -94,145 +94,210 @@ erDiagram
 
     ATTRACTION {
         string name
-        text description
-        image image
+        string description
+        string image
     }
 
     PAGE {
         string slug
         string title
-        text content
+        string content
         datetime updated_at
     }
+```
 
 The key relationship is:
 
-One Area → Many Attractions
+**One Area → Many Attractions**
 
 This allows the application to:
 
-Retrieve every attraction belonging to a specific area, such as Bucharest
-Display an area's related attractions dynamically
-Navigate from an attraction back to its associated area
-Keep location and attraction data structured through Django relationships
-Django Architecture
+- Retrieve every attraction belonging to a specific area, such as Bucharest
+- Display an area's related attractions dynamically
+- Navigate from an attraction back to its associated area
+- Keep location and attraction data structured through Django relationships
+
+---
+
+## Django Architecture
 
 The project is separated into two main Django applications.
 
-geography
+### `geography`
 
 Responsible for:
 
-Area and attraction models
-Relationships between areas and attractions
-CRUD workflows
-Django forms
-List and detail views
-Image handling
-Geography-specific URL routing
-pages
+- Area and attraction models
+- Relationships between areas and attractions
+- CRUD workflows
+- Django forms
+- List and detail views
+- Image handling
+- Geography-specific URL routing
+
+### `pages`
 
 Responsible for:
 
-General country-information pages
-Database-backed page content
-Shared navigation
-Context processing
-Static assets
-Page-specific URL routing
-milestone02
+- General country-information pages
+- Database-backed page content
+- Shared navigation
+- Context processing
+- Static assets
+- Page-specific URL routing
+
+### `milestone02`
 
 The Django project configuration containing:
 
-Application settings
-Root URL configuration
-WSGI configuration
-ASGI configuration
-Technical Concepts Demonstrated
-Django models and ORM
-Foreign-key relationships
-Relational database design
-Full CRUD workflows
-Django forms and validation
-URL routing and request handling
-Template inheritance and reusable templates
-Context processors
-Static and media file management
-Database migrations
-Reusable Django fixtures
-Environment-based application configuration
-Technology Stack
-Python
-Django 6
-SQLite
-HTML
-CSS
-Django Templates
-Pillow
-Git
-GitHub
-Demo Data
+- Application settings
+- Root URL configuration
+- WSGI configuration
+- ASGI configuration
 
-The public repository does not include the original development db.sqlite3 database.
+---
+
+## Technical Concepts Demonstrated
+
+- Django models and ORM
+- Foreign-key relationships
+- Relational database design
+- Full CRUD workflows
+- Django forms and validation
+- URL routing and request handling
+- Template inheritance and reusable templates
+- Context processors
+- Static and media file management
+- Database migrations
+- Reusable Django fixtures
+- Environment-based application configuration
+
+---
+
+## Technology Stack
+
+- Python
+- Django 6
+- SQLite
+- HTML
+- CSS
+- Django Templates
+- Pillow
+- Git
+- GitHub
+
+---
+
+## Demo Data
+
+The public repository does not include the original development `db.sqlite3` database.
 
 Instead, reusable Django fixtures are provided:
 
+```text
 geography/fixtures/demo_data.json
 pages/fixtures/demo_pages.json
+```
 
 These fixtures recreate the sample geography and informational content used by the application.
 
 Attraction images are included under:
 
+```text
 media/attractions/
+```
 
 This allows the project to preserve its demonstration content while keeping the local development database out of the public repository.
 
-Running the Project Locally
-1. Clone the repository
+---
+
+## Running the Project Locally
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/EmirDemirkol/romania-explorer.git
 cd romania-explorer
-2. Create a virtual environment
+```
+
+### 2. Create a virtual environment
+
+```bash
 python3 -m venv venv
-3. Activate the virtual environment
+```
 
-macOS / Linux:
+### 3. Activate the virtual environment
 
+**macOS / Linux:**
+
+```bash
 source venv/bin/activate
+```
 
-Windows:
+**Windows:**
 
+```powershell
 venv\Scripts\activate
-4. Install dependencies
+```
+
+### 4. Install dependencies
+
+```bash
 python -m pip install -r requirements.txt
-5. Create the local database
+```
+
+### 5. Create the local database
+
+```bash
 python manage.py migrate
-6. Load the demo content
+```
+
+### 6. Load the demo content
+
+```bash
 python manage.py loaddata pages/fixtures/demo_pages.json
 python manage.py loaddata geography/fixtures/demo_data.json
-7. Run the development server
+```
+
+### 7. Run the development server
+
+```bash
 python manage.py runserver
+```
 
 Open:
 
+```text
 http://127.0.0.1:8000/
-Configuration
+```
+
+---
+
+## Configuration
 
 Django configuration can be supplied through environment variables.
 
 Supported variables include:
 
+```text
 DJANGO_SECRET_KEY
 DJANGO_DEBUG
 DJANGO_ALLOWED_HOSTS
+```
 
 An example configuration is provided in:
 
+```text
 .env.example
+```
 
 This keeps environment-specific configuration separate from the application source code.
 
-Project Structure
+---
+
+## Project Structure
+
+```text
 romania-explorer/
 │
 ├── geography/
@@ -273,44 +338,52 @@ romania-explorer/
 ├── manage.py
 ├── requirements.txt
 └── README.md
-What I Learned
+```
+
+---
+
+## What I Learned
 
 Developing Romania Explorer strengthened my understanding of how Django applications move beyond static webpages into structured, database-driven systems.
 
 The project gave me practical experience with:
 
-Designing relationships between application entities
-Implementing complete CRUD workflows
-Querying related records through Django's ORM
-Connecting models, views, URLs and templates
-Working with forms and user-submitted data
-Handling uploaded media
-Building reusable templates
-Using context processors for shared application data
-Managing database migrations
-Recreating application data through fixtures
-Organising functionality across multiple Django applications
+- Designing relationships between application entities
+- Implementing complete CRUD workflows
+- Querying related records through Django's ORM
+- Connecting models, views, URLs and templates
+- Working with forms and user-submitted data
+- Handling uploaded media
+- Building reusable templates
+- Using context processors for shared application data
+- Managing database migrations
+- Recreating application data through fixtures
+- Organising functionality across multiple Django applications
 
 These concepts provide a foundation for larger backend, business-system and enterprise applications where structured data, maintainable architecture and reliable data relationships are important.
 
-Academic Context
+---
+
+## Academic Context
 
 Developed as part of:
 
-CSC1025 – Developing Internet Applications
-BSc Computing for Business
-Dublin City University
+**CSC1025 – Developing Internet Applications**  
+**BSc Computing for Business**  
+**Dublin City University**
 
-The associated coursework achieved an 85% overall result.
+The associated coursework achieved an **85% overall result**.
 
 The interface was intentionally kept lightweight while the project focused primarily on Django functionality, database relationships, CRUD operations and application structure.
 
-Author
+---
 
-Emir Demirkol
+## Author
 
-BSc Computing for Business
+**Emir Demirkol**
+
+BSc Computing for Business  
 Dublin City University
 
-LinkedIn
-GitHub
+[LinkedIn](https://www.linkedin.com/in/emir-demirkol-7ba27a35b)  
+[GitHub](https://github.com/EmirDemirkol)
