@@ -6,6 +6,22 @@ The project was developed for **CSC1025 – Developing Internet Applications** a
 
 ---
 
+## Application Preview
+
+### Area Management
+
+![Romania Explorer area management](docs/screenshots/areas.png)
+
+### Attraction Management
+
+![Romania Explorer attraction management](docs/screenshots/attractions.png)
+
+### Attraction Detail
+
+![Romania Explorer attraction detail](docs/screenshots/attraction-detail.png)
+
+---
+
 ## Overview
 
 Romania Explorer combines informational country content with a database-driven geography system.
